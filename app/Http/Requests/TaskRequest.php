@@ -24,7 +24,7 @@ class TaskRequest extends FormRequest
         return [
             'category_id' => 'required|exists:categories,id',
             'title' => 'required|string|max:255',
-            'description' => 'required|string|',
+            'description' => 'required|string|max:1000',
             'priority' => 'required|integer|in:1,2,3',
         ];
     }
@@ -39,6 +39,7 @@ class TaskRequest extends FormRequest
             'title.string' => 'タイトルは文字列で入力してください',
             'title.max' => 'タイトルは255文字以内で入力してください',
             'description.string' => '説明内容は文字列で入力してください',
+            'description.max' => '説明内容は1000文字以内で入力してください',
             'priority.required' => '優先度を選択してください',
             'priority.integer' => '優先度は1～3の数値で入力してください',
             'priority.in' => '優先度は1～3の数値で入力してください',

@@ -15,8 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return redirect()->route('login');
+});
+
 
 Route::middleware('auth')->group(function () {
-    Route::resource('/tasks', TaskController::class);
     Route::resource('categories', CategoryController::class);
+    Route::resource('tasks', TaskController::class);
 });
