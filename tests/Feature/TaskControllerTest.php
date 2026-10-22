@@ -114,8 +114,6 @@ class TaskControllerTest extends TestCase
             'category_id' => $category->id,
         ]);
 
-        $response->dumpSession();
-
         $response->assertRedirect(route('tasks.index'));
         $this->assertDatabaseHas('tasks', [
             'title' => str_repeat('a', 255),
