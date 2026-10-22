@@ -24,7 +24,7 @@ class TaskRequest extends FormRequest
         return [
             'category_id' => 'required|exists:categories,id',
             'title' => 'required|string|max:255',
-            'description' => 'required|string|max:1000',
+            'description' => 'nullable|string|max:1000',
             'priority' => 'required|integer|in:1,2,3',
         ];
     }

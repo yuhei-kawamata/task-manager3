@@ -9,6 +9,8 @@ use Tests\TestCase;
 
 class RegistrationTest extends TestCase
 {
+    use RefreshDatabase;
+
     /** @test */
     public function 登録画面を表示できる(): void
     {
